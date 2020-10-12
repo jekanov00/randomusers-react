@@ -1,0 +1,10 @@
+.cardsContainer {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cardsContainer > * {
+    margin: 20px;
+}

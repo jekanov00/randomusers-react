@@ -1,0 +1,14 @@
+{
+    "api": {
+      "baseUrl": "https://randomuser.me/api/",
+      "user": {
+        "allowedQueryParams": ["seed", "page", "results", "inc"],
+        "defaultQueryParams": {
+          "seed": "fd2020-1",
+          "page": 1,
+          "results": 20,
+          "inc": ["id", "email", "name", "picture", "gender"]
+        }
+      }
+    }
+  }
