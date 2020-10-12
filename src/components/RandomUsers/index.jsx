@@ -10,20 +10,28 @@ class RandomUsers extends Component {
     this.state = {
       isLoaded: false,
       userList: null,
+      error: null,
     };
   }
 
   componentDidMount() {
-    getUsers().then(data => {
-      this.setState({
-        userList: data,
-        isLoaded: true,
+    getUsers()
+      .then(data => {
+        this.setState({
+          userList: data,
+          isLoaded: true,
+        });
+      })
+      .catch(e => {
+        this.setState({
+          isLoaded: false,
+          error: e,
+        });
       });
-    });
   }
 
   render() {
-    const { isLoaded, userList } = this.state;
+    const { isLoaded, userList, error } = this.state;
     if (isLoaded) {
       return (
         <ol className={'cardsContainer'}>
@@ -32,8 +40,18 @@ class RandomUsers extends Component {
           })}
         </ol>
       );
+    } else if (error) {
+      return (
+        <div style={{ marginTop: window.innerHeight / 2 - 50 }} className={'error'}>
+          Error: {error}
+        </div>
+      );
     } else {
-      return <div>Loading...</div>;
+      return (
+        <div style={{ marginTop: window.innerHeight / 2 - 50 }} className={'loading'}>
+          Loading...
+        </div>
+      );
     }
   }
 }

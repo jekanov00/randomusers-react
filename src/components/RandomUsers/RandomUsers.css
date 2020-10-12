@@ -8,3 +8,14 @@
 .cardsContainer > * {
     margin: 20px;
 }
+
+.loading, .error {
+  text-align: center;
+  font-size: 40px;
+  margin: 20px;
+}
+
+.error {
+  text-decoration: underline;
+  color: darkred;
+}
