@@ -1,0 +1,54 @@
+.cardsContainer {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  & > * {
+    margin: 20px;
+  }
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 40px;
+  margin: 20px;
+}
+
+.error {
+  text-decoration: underline;
+  color: darkred;
+}
+
+.retryBtn {
+  display: block;
+  font-size: 40px;
+  text-align: center;
+  padding: 5px 20px;
+  margin: 20px auto;
+}
+
+.pagesContainer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  font-size: 30px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+
+  .page {
+    cursor: pointer;
+    user-select: none;
+    padding: 5px;
+    min-width: 1.5em;
+    border: 1px solid #333333;
+    background-color: #a5bacc;
+
+    &:hover {
+      background-color: #f0f8ff;
+    }
+  }
+}
